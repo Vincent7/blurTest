@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>uri</key>
+			<string></string>
+			<key>link</key>
+			<string></string>
+			<key>appName</key>
+			<string>iUke</string>
+			<key>appDes</key>
+			<string>App for Uke users.</string>
+			<key>iconImage</key>
+			<string>iuke</string>
+			<key>arrDetailImages</key>
+			<array>
+				<string>feature2</string>
+				<string>feature1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>uri</key>
+			<string></string>
+			<key>link</key>
+			<string></string>
+			<key>appName</key>
+			<string>My Song</string>
+			<key>appDes</key>
+			<string>App Named My Song.</string>
+			<key>iconImage</key>
+			<string>ms</string>
+			<key>arrDetailImages</key>
+			<array>
+				<string>feature1</string>
+				<string>feature2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>uri</key>
+			<string></string>
+			<key>link</key>
+			<string></string>
+			<key>appName</key>
+			<string>Uke Chord</string>
+			<key>appDes</key>
+			<string>App for Learning Uke Chords.</string>
+			<key>iconImage</key>
+			<string>uc</string>
+			<key>arrDetailImages</key>
+			<array>
+				<string>feature2</string>
+				<string>feature1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>uri</key>
+			<string></string>
+			<key>link</key>
+			<string></string>
+			<key>appName</key>
+			<string>Uke Hero</string>
+			<key>appDes</key>
+			<string>Play Uke like Playing like a Hero.</string>
+			<key>iconImage</key>
+			<string>uh</string>
+			<key>arrDetailImages</key>
+			<array>
+				<string>feature1</string>
+				<string>feature2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>uri</key>
+			<string></string>
+			<key>link</key>
+			<string></string>
+			<key>appName</key>
+			<string>Uke Toolkit</string>
+			<key>appDes</key>
+			<string>Best toolkit for Your Ukulele.</string>
+			<key>iconImage</key>
+			<string>uk</string>
+			<key>arrDetailImages</key>
+			<array>
+				<string>feature2</string>
+				<string>feature1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>uri</key>
+			<string></string>
+			<key>link</key>
+			<string></string>
+			<key>appName</key>
+			<string>Uke101</string>
+			<key>appDes</key>
+			<string>Learn Uke from zero.</string>
+			<key>iconImage</key>
+			<string>uke101</string>
+			<key>arrDetailImages</key>
+			<array>
+				<string>feature2</string>
+				<string>feature1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>uri</key>
+			<string></string>
+			<key>link</key>
+			<string></string>
+			<key>appName</key>
+			<string>Uke Tube</string>
+			<key>appDes</key>
+			<string>Find all Uke Video you want here.</string>
+			<key>iconImage</key>
+			<string>ut</string>
+			<key>arrDetailImages</key>
+			<array>
+				<string>feature1</string>
+				<string>feature2</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

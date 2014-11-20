@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EUMIconsSliderContainerView.h"
 #import "EUMUkeIconInfo.h"
+#import "BaseUtils.h"
 @interface EUMAppsForUkersViewController : UIViewController<EUMIconSliderDelegate>
--(instancetype)initWithArrIconsInfo:(NSArray*)arrIcon;
+-(instancetype)initWithArrIconsInfo:(NSArray*)arrIcon andViewController:(UIViewController*)vc;
 @end

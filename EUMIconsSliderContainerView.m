@@ -7,7 +7,7 @@
 //
 
 #import "EUMIconsSliderContainerView.h"
-#define ORDWIDTH 150
+#define ORDWIDTH ((mIsPhone3_4_4S)?(110.0):(140.0))
 #define GAPWIDTH 50
 #define DECREASERAIO .8
 typedef NS_ENUM(NSInteger, TestColor)
@@ -36,9 +36,11 @@ typedef NS_ENUM(NSInteger, TestColor)
     
     iconDistance = [NSMutableDictionary dictionaryWithCapacity:arrIcons.count];
     newSelectedIndex = (int)arrIcons.count/2;
-    self.contentSize = CGSizeMake(self.viewSize.width + (arrIcons.count-1)*ORDWIDTH/2, self.viewSize.height);
+    float ratio = (mIsPad)?(5.0/12.0):(5.0/12.0);
+    NSLog(@"%f + %f",self.viewSize.width,(arrIcons.count-1)*(float)ORDWIDTH*ratio);
+    self.contentSize = CGSizeMake(self.viewSize.width + (arrIcons.count-1)*(float)ORDWIDTH*ratio, self.viewSize.height);
     [self configIconWithTopIndex:newSelectedIndex];
-    [self setContentOffset:CGPointMake(self.contentSize.width/2 - self.viewSize.width/2, 0)];
+    [self setContentOffset:CGPointMake(self.contentSize.width/2 - self.frame.size.width/2, 0)];
     self.delegate = self;
     self.decelerationRate = .5;
     [self arrangeIconsView];
@@ -150,12 +152,8 @@ typedef NS_ENUM(NSInteger, TestColor)
     NSArray *sortedKeys = [dictionary keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         int v1 = [obj1 floatValue];
         int v2 = [obj2 floatValue];
-        if (v1 < v2)
-            return NSOrderedAscending;
-        else if (v1 > v2)
-            return NSOrderedDescending;
-        else
-            return NSOrderedSame;
+        if (v1 < v2) return NSOrderedAscending;
+        else  return NSOrderedDescending;
     }];
     return sortedKeys;
 }
@@ -168,6 +166,7 @@ typedef NS_ENUM(NSInteger, TestColor)
     }
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
     for (int i = 0; i<_arrIcons.count; i++) {
         float dis = [self getDistanceToScreenFromViewWithIndex:(int)(_arrIcons.count - i-1)];
         
@@ -178,17 +177,17 @@ typedef NS_ENUM(NSInteger, TestColor)
         view.frame = CGRectMake(0, 0, sizeWidth, sizeWidth);
         view.center = CGPointMake((i - newSelectedIndex) * GAPWIDTH + self.contentSize.width/2, self.viewSize.height/2);
         [iconDistance setObject:@(dis) forKey:@(i)];
-        
     }
     [self arrangeIconsView];
 }
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     int minDisIndex = 0;
-    NSLog(@"scrollViewDidEndDecelerating");
     for (int i = 0; i<_arrIcons.count; i++) {
         float dis = [self getDistanceToScreenFromViewWithIndex:(int)(_arrIcons.count - i-1)];
-        if (dis<[self getDistanceToScreenFromViewWithIndex:(int)(_arrIcons.count - minDisIndex-1)]) {
+        if (dis<=[self getDistanceToScreenFromViewWithIndex:(int)(_arrIcons.count - minDisIndex-1)]) {
             minDisIndex = i;
+        }else{
+            break;
         }
         
     }
@@ -197,12 +196,13 @@ typedef NS_ENUM(NSInteger, TestColor)
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     
     if (!decelerate) {
-        NSLog(@"scrollViewDidEndDragging");
         int minDisIndex = 0;
         for (int i = 0; i<_arrIcons.count; i++) {
             float dis = [self getDistanceToScreenFromViewWithIndex:(int)(_arrIcons.count - i-1)];
-            if (dis<[self getDistanceToScreenFromViewWithIndex:(int)(_arrIcons.count - minDisIndex-1)]) {
+            if (dis<=[self getDistanceToScreenFromViewWithIndex:(int)(_arrIcons.count - minDisIndex-1)]) {
                 minDisIndex = i;
+            }else{
+                break;
             }
         }
         [self sliderMoveIconWithIndex:minDisIndex];

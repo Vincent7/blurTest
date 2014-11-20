@@ -17,7 +17,9 @@
 @property (strong,nonatomic) NSMutableArray *arrIcons;
 @property (weak,nonatomic) id<EUMIconSliderDelegate> iconSliderDelegate;
 @property (assign,nonatomic) CGSize viewSize;
+
 -(void)moveLeft;
 -(void)moveRight;
+-(void)sliderMoveIconWithIndex:(int)index;
 //TODO:create a method for getting screenWidth
 @end

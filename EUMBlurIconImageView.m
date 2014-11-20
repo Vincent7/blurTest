@@ -15,7 +15,7 @@
     if(blurRadius!=_blurRadius){
         _blurRadius = blurRadius;
         self.image =  [originImage applyBlurWithRadius:blurRadius tintColor:[UIColor colorWithWhite:1 alpha:0] saturationDeltaFactor:1 maskImage:nil];
-        self.alpha = 1 - .6*(blurRadius/2.5);
+        self.alpha = 1 - ((mIsPad)?5.5:.6)*(blurRadius/2.5)*(blurRadius/2.5);
     }
     
 }

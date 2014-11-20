@@ -10,6 +10,9 @@
 @interface EUMUkeIconInfo : NSObject
 @property(strong,nonatomic) UIImage *iconImage;
 @property(strong,nonatomic) NSArray *arrDetailImages;
--(id)initWithImage:(UIImage*)iconImage andDetailImages:(NSArray*)arrImages;
+@property(strong,nonatomic) NSURL *appStoreUrl;
+@property(strong,nonatomic) NSString *appName;
+@property(strong,nonatomic) NSString *appDescription;
+-(id)initWithImage:(UIImage*)iconImage andDetailImages:(NSArray*)arrImages andName:(NSString*)name andDescription:(NSString*)des;
 //TODO: add more attributes here like: url?
 @end

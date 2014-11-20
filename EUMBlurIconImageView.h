@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BaseUtils.h"
 @interface EUMBlurIconImageView : UIImageView
 @property (assign,nonatomic) float blurRadius;
 -(instancetype)initWithImage:(UIImage *)image;
